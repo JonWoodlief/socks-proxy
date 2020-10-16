@@ -9,10 +9,10 @@ A Socks Proxy will open an SSH tunnel to a remote machine, and a port on your lo
 ## Use SSH to setup Socks Proxy
 
 ```
-ssh -D 3128 ${USER}@${IP}
+ssh -D -q 3128 ${USER}@${IP}
 ```
 
-Access the machine through SSH like you usually would, but include the -D flag to bind the SOCKS proxy to port 3128 on your local machine. Any port will work as long as it isn't being used already- 3128 is arbitrary.
+Access the machine through SSH like you usually would, but include the `-D` flag to bind the SOCKS proxy to port 3128 on your local machine. Any port will work as long as it isn't being used already- 3128 is arbitrary. The `-q` flag silences output related to the Socks Proxy so that this SSH session is still usable for other tasks.
 
 If you're on a windows machine- you can setup a Socks Proxy using graphical tools such as PuTTY or mobaXterm
 
